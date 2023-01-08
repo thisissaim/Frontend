@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    margin: 0;
+    font-family: 'Pacifico' , 'sans-serif';
+    background-image: linear-gradient(0deg , rgb(194, 215, 221) 23.8%,
+     rgb(34, 148, 163)92%);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+}
+
+.music-container{
+    background-color: white;
+    border-radius: 33px;
+    box-shadow: 0 30px 30px 0 rgb(87, 169, 202) ;
+    display: flex;
+    padding: 25px 30px;
+    position: relative;
+    margin: 100px 0;
+    z-index: 10;
+}
+.img-container{
+    position: relative;
+    width: 110px;
+}
+.img-container::after{
+    content: '';
+    background-color: white;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.img-container img{
+    width: inherit;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    animation: rotate 3s linear infinite;
+
+    animation-play-state: paused;
+}
+.music-container.play .img-container img{
+    animation-play-state: running;
+}
+/* means if music container has a class play then run the circle
+untill then keep it paused  */
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.action-btn{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color:rgb(175, 197, 212);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 15px;
+    margin: 0 22px;
+}
+.action-btn-big{
+    color: #51a4b9;
+    font-size: 25px;
+}
+
+.action-btn:focus{
+    outline: 0;
+}
+/* Next is to pop music info when song plays */
+.music-info {
+    background-color: rgba(255, 255, 255, 0.514);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 20px 20px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: calc(100% - 40px);
+    opacity: 0;
+    transform: translateY(0%);
+    padding: 10px 10px 10px 170px;
+    transition: transform 0.3s ease-in opacity 0.5 ease-in;
+}
+
+.music-container.play .music-info
+{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.progress-container{
+    background: rgb(62, 165, 179);
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
+    width: 100%;
+
+}
+
+.progress{
+    background-color: rgb(19, 55, 66);
+    border-radius: 10px;
+    height: 100%;
+    width: 50%;
+    transition: width 0.2s linear;
+}

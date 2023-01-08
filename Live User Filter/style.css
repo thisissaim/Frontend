@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+*
+{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f8f9fd;
+    font-family: 'Roboto' , 'sans-serif';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    margin: 10;
+}
+.container
+{
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgb(19, 1, 1 , 0.4);
+    overflow: hidden;
+    width: 400px;
+}
+.title{
+    margin: 0;
+}
+.subtitle
+{
+    display: inline-block;
+    margin: 5px 0 2px;
+}
+.header{
+    background-color: #3e57db;
+    color: white;
+    padding: 30px 20px;
+}
+.header input{
+    background-color: rgba(0 , 0 , 0 , 0.3) ;
+    border: 0;
+    border: 40px;
+    color: #f8f9fd;
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+}
+::-webkit-input-placeholder { /* Edge */
+    color: rgba(174, 167, 207, 0.753);
+  }
+.header input:focus{
+    outline: none;
+}
+.user-list{
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-height: 450px;
+    overflow-y: auto;
+}
+::-webkit-scrollbar {
+    width: 100px;
+  }
+
+.user-list li {
+    display: flex;
+    padding: 20px;
+}
+.user-list img{
+    border-radius: 50%;
+    object-fit: cover;
+    height: 65px;
+    width: 65px;
+}
+.user-list .user-info h4{
+    padding-left: 15px;
+    margin: 0 0 10px;
+}
+.user-list .user-info p{
+    padding-left: 15px;
+    font-size: 12px;
+}
+.user-list li:not(:last-of-type){
+    border-bottom: 1.5px solid rgb(49, 21, 94 , 0.1);
+}
+/* except last element get a border */
+.user-list li.hide{
+    /* this will be dynamic when search option wont match the users shown */
+    display: none;
+
+}
