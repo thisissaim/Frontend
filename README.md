@@ -1,1 +1,1 @@
-# Lottery_System
+ **A compilation of small web development project**
